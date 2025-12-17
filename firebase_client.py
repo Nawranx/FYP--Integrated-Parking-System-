@@ -1,0 +1,34 @@
+# firebase_client.py
+import firebase_admin
+from firebase_admin import credentials, db
+import time
+
+if not firebase_admin._apps:
+    cred = credentials.Certificate("fyp1-46dbd-firebase-adminsdk-fbsvc-0edf4cf2fd.json")
+    firebase_admin.initialize_app(cred, {
+        "databaseURL": "https://fyp1-46dbd-default-rtdb.asia-southeast1.firebasedatabase.app"
+    })
+
+
+def update_parking_area(area_name: str, slot_status: dict,
+                        total_slots: int, free_slots: int, occupied_slots: int):
+    """
+    Writes the parking status of one area into Realtime Database.
+    area_name: "area1" or "area2"
+    slot_status: {1: "free", 2: "occupied", ...}
+    """
+    ref = db.reference(f"parking/{area_name}")
+    slots_payload = {
+        str(slot_id): {"status": status}
+        for slot_id, status in slot_status.items()
+    }
+
+    data = {
+        "area_name": area_name,
+        "total_slots": total_slots,
+        "free_slots": free_slots,
+        "occupied_slots": occupied_slots,
+        "slots": slots_payload,
+        "updated_at": int(time.time())  # unix timestamp
+    }
+    ref.set(data)
