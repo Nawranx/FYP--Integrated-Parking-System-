@@ -3,6 +3,9 @@ import firebase_admin
 from firebase_admin import credentials, db
 import time
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Page config must be first
 st.set_page_config(
@@ -18,9 +21,9 @@ def init_firebase():
     # Check if app is already initialized to avoid errors
     if not firebase_admin._apps:
         # Use the absolute path or relative path to your JSON key
-        cred = credentials.Certificate("fyp1-46dbd-firebase-adminsdk-fbsvc-0edf4cf2fd.json")
+        cred = credentials.Certificate(os.getenv("FIREBASE_CREDENTIALS_PATH"))
         firebase_admin.initialize_app(cred, {
-            "databaseURL": "https://fyp1-46dbd-default-rtdb.asia-southeast1.firebasedatabase.app"
+            "databaseURL": os.getenv("FIREBASE_DATABASE_URL")
         })
     return True
 

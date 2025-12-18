@@ -1,12 +1,15 @@
-# firebase_client.py
 import firebase_admin
 from firebase_admin import credentials, db
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate("fyp1-46dbd-firebase-adminsdk-fbsvc-0edf4cf2fd.json")
+    cred = credentials.Certificate(os.getenv("FIREBASE_CREDENTIALS_PATH"))
     firebase_admin.initialize_app(cred, {
-        "databaseURL": "https://fyp1-46dbd-default-rtdb.asia-southeast1.firebasedatabase.app"
+        "databaseURL": os.getenv("FIREBASE_DATABASE_URL")
     })
 
 
