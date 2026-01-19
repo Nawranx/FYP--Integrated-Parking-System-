@@ -1,3 +1,38 @@
-*.json
-*.mp4
+# --- IDE & System ---
+.vscode/
+.idea/
+.DS_Store
+*.swp
+__pycache__/
+
+# --- Python Environment ---
+.venv/
+venv/
+env/
+dist/
+build/
+*.py[cod]
+
+
 .env
+*-firebase-adminsdk-*.json
+firebase_key.json
+google-services.json
+
+# --- ASSETS ---
+*.csv
+*.mp4
+*.MOV
+*.avi
+
+# --- AI MODELS ---
+*.pt
+*.pkl
+*.h5
+
+# --- EXCEPTIONS ---
+!parking_config.json
+!polygons1.json
+!polygons2.json
+!requirements.txt
+!README.md

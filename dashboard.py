@@ -36,7 +36,7 @@ except Exception as e:
 
 # --- UI Layout ---
 
-st.title("🚗 Real-time Parking Availability v1.1")
+st.title("🚗 Real-time Parking Availability ")
 st.markdown("Monitor parking slots in real-time.")
 
 # Container for auto-refreshing content

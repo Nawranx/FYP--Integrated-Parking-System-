@@ -35,3 +35,13 @@ def update_parking_area(area_name: str, slot_status: dict,
         "updated_at": int(time.time())  # unix timestamp
     }
     ref.set(data)
+
+def get_parking_data(area_name: str = None):
+    """
+    Reads parking data. If area_name provided, returns that area.
+    Otherwise returns all.
+    """
+    ref = db.reference("parking")
+    if area_name:
+        return ref.child(area_name).get()
+    return ref.get()
