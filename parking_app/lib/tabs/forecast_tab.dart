@@ -92,12 +92,12 @@ class _ForecastTabState extends State<ForecastTab> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'AI Forecaster',
+              'Plan your Trip NoW',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             const SizedBox(height: 8),
             const Text(
-              'Search locations to view predicted availability for the next 30 days.',
+              'Search locations to view the slots availability for the next 30 days.',
               style: TextStyle(color: Colors.white60),
             ),
           ],

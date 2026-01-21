@@ -22,7 +22,7 @@ A dedicated dashboard for facility managers to monitor live occupancy metrics, t
 
 ## 🏗️ System Architecture
 
-- **Mobile App**: Flutter (Premium Dark UI, Glassmorphism)
+- **Mobile App**: Flutter 
 - **Backend API**: Flask (Python)
 - **Computer Vision**: YOLOv8, OpenCV
 - **Predictive Model**: XGBoost Regressor

@@ -6,7 +6,7 @@ import '../models/parking_area.dart';
 class ApiService {
   // Use 10.0.2.2 for Android Emulator, 127.0.0.1 for iOS/Desktop
   // If testing on real device, use your machine's local IP (e.g., 192.168.1.x)
-  static const String baseUrl = 'http://10.0.2.2:5000';
+  static const String baseUrl = 'http://172.16.119.120:5000';
 
   Future<List<ParkingArea>> getAreas() async {
     try {

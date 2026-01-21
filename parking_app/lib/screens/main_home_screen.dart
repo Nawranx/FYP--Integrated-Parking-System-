@@ -53,12 +53,12 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
             BottomNavigationBarItem(
               icon: Icon(Icons.cloud_outlined),
               activeIcon: Icon(Icons.wb_sunny_outlined),
-              label: 'Forecast',
+              label: 'Plan Trip',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.location_on_outlined),
               activeIcon: Icon(Icons.location_on),
-              label: 'My Spot',
+              label: 'Live Status',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_outline),

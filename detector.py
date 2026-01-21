@@ -90,9 +90,6 @@ class ParkingAreaDetector:
                         cx = int((x1 + x2) / 2)
                         cy = int((y1 + y2) / 2)
 
-                        # optional: only cars
-                        # if self.names[class_id] != "car":
-                        #     continue
 
                         for idx, poly in enumerate(self.polygons):
                             pts = np.array(poly, np.int32).reshape((-1, 1, 2))

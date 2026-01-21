@@ -78,7 +78,7 @@ class _DashboardTabState extends State<DashboardTab> {
                     ),
                     const SizedBox(width: 12),
                     Text(
-                      'Mission Objective',
+                      'Plan. Drive. Park.',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         color: AppTheme.neonCyan,
                         fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class _DashboardTabState extends State<DashboardTab> {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'To suggest parking areas by prioritizing the nearest available spots, reducing search time, and enhancing driver convenience using AI insights.',
+                  'No more guessing, no more circling. We help you plan your trip, show you where to park, guide you directly to available spots to save you time and fuel.',
                   style: TextStyle(
                     color: Colors.white70,
                     fontSize: 15,
@@ -102,7 +102,7 @@ class _DashboardTabState extends State<DashboardTab> {
           const SizedBox(height: 24),
 
           Text(
-            'Summary',
+            'Insight',
             style: Theme.of(
               context,
             ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
@@ -171,7 +171,7 @@ class _DashboardTabState extends State<DashboardTab> {
                           ),
                         ),
                         Text(
-                          'Unlock AI-prioritized parking & ad-free experience',
+                          'Unlock prioritized parking & ad-free experience',
                           style: TextStyle(color: Colors.white60, fontSize: 12),
                         ),
                       ],
@@ -229,7 +229,7 @@ class _DashboardTabState extends State<DashboardTab> {
             ),
             const SizedBox(height: 40),
             _buildPackageItem('Monthly Pro', '\$4.99', 'Per Month', [
-              'AI Forecasting',
+              'Availabity Forecasting',
               'Priority Support',
               'Ad-Free',
             ], false),

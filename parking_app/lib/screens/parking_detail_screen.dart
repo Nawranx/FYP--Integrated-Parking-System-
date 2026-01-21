@@ -255,7 +255,7 @@ class _ParkingDetailScreenState extends State<ParkingDetailScreen> {
                             color: Colors.black,
                           ),
                         )
-                      : const Text('Analyze Patterns'),
+                      : const Text('Check Availability'),
                 ),
               ),
               if (_predictionError.isNotEmpty)
@@ -316,7 +316,7 @@ class _ParkingDetailScreenState extends State<ParkingDetailScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'AI Prediction',
+                  'Prediction',
                   style: TextStyle(color: Colors.white54, fontSize: 12),
                 ),
                 Text(

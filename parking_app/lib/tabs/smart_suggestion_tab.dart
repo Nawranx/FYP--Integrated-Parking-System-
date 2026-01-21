@@ -131,12 +131,12 @@ class _SmartSuggestionTabState extends State<SmartSuggestionTab> {
         children: [
           const SizedBox(height: 40),
           Text(
-            'Smart Suggestion',
+            'Live Slot Status and Navigation',
             style: Theme.of(context).textTheme.headlineLarge,
           ),
           const SizedBox(height: 8),
           const Text(
-            'Prioritizing convenience and reducing your search time.',
+            'Track live slot availability and navigate to free slot. Prioritizing convenience and reducing your search time.',
             style: TextStyle(color: Colors.white60),
           ),
           const SizedBox(height: 32),
