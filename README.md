@@ -1,22 +1,32 @@
-# DriveInSight: Integrated Smart Parking System 🚗💨
+# DriveInSight: Integrated System for Space Utilization Forecasting with Real-Time Parking Guidance 🚗💨
 
-**DriveInSight** is an AI-powered end-to-end parking solution designed to minimize search time, reduce urban congestion, and provide drivers with a seamless "last-mile" navigation experience.
+**DriveInSight** is an integrated smart parking system that combines machine learning-based availability prediction, real-time computer vision detection, and slot-level navigation into a single unified platform — helping drivers find parking faster while reducing congestion, fuel waste, and frustration.
+
+# Overview
+Most parking systems operate in silos: some show static availability signs, others offer basic reservations — but none bring prediction, live monitoring, and intelligent guidance together in one place. DriveInSight bridges that gap.
+Built as a Final Year Project, the system is deployed as a Flutter mobile application backed by a Flask REST API, Firebase Realtime Database, and Firestore, with computer vision processing running on live CCTV feeds.
 
 ---
 
 ## 🌟 Key Features
 
-### 1. Slot Availability Prediction (XGBoost)
-Predicts future parking occupancy using historical time-series data. Drivers can search for their destination (e.g., "Plaza Mall") and a specific time to see predicted availability with high confidence scores.
+### 1. Parking Availability Prediction
+An XGBoost model trained on historical IN/OUT parking records forecasts slot availability at user-selected future times, with a confidence score and specific slot recommendations. Achieves 95.23% accuracy.
 
-### 2. Real-Time Vision Detection (YOLOv8)
-A computer vision module that monitors parking facilities via live video feeds. It identifies available slots instantly and synchronizes the status to the cloud.
+### 2. Real-Time Slot Detection
+YOLOv8 processes live CCTV feeds to classify each parking slot as free or occupied, updating Firebase every ~2 seconds. Achieves mAP@50 of 97.9%, precision 97.4%, recall 94.0%.
 
-### 3. Smart Suggestion & Precision Navigation
-A premium Flutter mobile app that suggests the best parking zone based on distance and live occupancy. It provides pinpoint GPS navigation directly to a **specific parking slot** using unique coordinates.
+### 3. Nearest-Slot Navigation
+A rule-based guidance module integrated with GeoFire and Google Maps directs drivers to the nearest confirmed-free slot with turn-by-turn directions.
 
-### 4. Admin Monitoring Portal (Streamlit)
-A dedicated dashboard for facility managers to monitor live occupancy metrics, total capacity, and slot-level status in real-time.
+### 4. Smart Recommendation Engine
+Ranks parking zones by proximity and live availability, with intelligent fallback when preferred zones are full.
+
+### 5. Admin Dashboard
+A Streamlit-based monitoring interface for parking operators to track real-time occupancy across all zones.
+
+### 6. Cross-Platform Mobile App
+Built with Flutter (Dart), featuring secure Firebase Auth, live slot visualisation, trip planning, and in-app navigation.
 
 ---
 
