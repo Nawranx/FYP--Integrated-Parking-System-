@@ -30,6 +30,11 @@ google-services.json
 *.pkl
 *.h5
 
+# --- YOLOv8 Training Data (images only - keep notebooks) ---
+YOLOv8 model Training/**/*.jpg
+YOLOv8 model Training/**/*.jpeg
+YOLOv8 model Training/**/*.png
+
 # --- EXCEPTIONS ---
 !parking_config.json
 !polygons1.json

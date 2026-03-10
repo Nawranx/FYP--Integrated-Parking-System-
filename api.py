@@ -54,7 +54,7 @@ def health_check():
 
 @app.route("/areas", methods=["GET"])
 def get_areas():
-    # Helper to return static config (coordinates etc)
+    # Helper to return static config 
     # Filter out API keys if present
     response = {k:v for k,v in PARKING_CONFIG.items() if "_api_key" not in k and "_url" not in k}
     return jsonify(response)
@@ -70,7 +70,6 @@ def get_parking_status():
             print(f"DEBUG: Area '{area_name}' not found in Firebase.")
             return jsonify({"error": f"Area '{area_name}' not found"}), 404
 
-        # FIX: Firebase sometimes converts maps with numeric keys ("1", "2") into lists.
         # Flutter expects a Map, so we convert it back if necessary.
         if data and 'slots' in data and isinstance(data['slots'], list):
             slots_list = data['slots']
@@ -116,7 +115,7 @@ def predict():
     slots_dict = area_config.get("slots", {})
     
     try:
-        # 1. Check Firestore Cache First
+        # Check Firestore Cache First
         cached_result = firestore_client.get_prediction_from_firestore(area_name, timestamp_str)
         if cached_result:
             print(f"Returning cached prediction from Firestore for {area_name} at {timestamp_str}")
@@ -171,7 +170,7 @@ def predict():
             if str(label).lower() in ["unoccupied", "free", "0"]:
                 free_slots.append(slot_id)
         
-        # 2. Save Prediction to Firestore for future use
+        # Save Prediction to Firestore for future use
         try:
             firestore_client.save_prediction_to_firestore(area_name, timestamp_str, free_slots)
         except Exception as fe:
